@@ -3,5 +3,9 @@
 
 까먹지말자.
 git init
+git status
+
 git add .
-git remote add
+git remote add "주소:
+pull 또는 push
+
