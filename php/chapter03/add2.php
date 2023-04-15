@@ -1,6 +1,6 @@
 <?php
 	$count = 0;
-	$num = 0;
+	$num = 1;
 	$sw = true;
 	for($i = 100; $i <= 10000; $i++){
 		if($i % 9 == 0){
