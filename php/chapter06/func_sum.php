@@ -14,4 +14,4 @@
     $to = 100;
     $total = sum($from, $to);
     echo ("$from 에서 $to 까지의 합 : $total");
-?>
+?>  
