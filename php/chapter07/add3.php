@@ -65,7 +65,6 @@ function quicksort($array) {
 
 function quicksort_process($array) {
     $result = quicksort_process_helper($array);
-    echo "After: " . implode(", ", $result) . "<br>";
 }
 
 function quicksort_process_helper($array) {
