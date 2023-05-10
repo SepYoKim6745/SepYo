@@ -18,16 +18,50 @@
             $size = count($num);
             for($i=0; $i<$size; $i++){
                 $mindx = $i;
-                for($j=i+1; $j<$size; $j++){
+                for($j=$i+1; $j<$size; $j++){
                     if($num[$mindx]>$num[$j]) $mindx = $j;
                 }
                 $temp = $num[$mindx];
-                $num[$mindx]=$a
+                $num[$mindx];
+                $num[$mindx]=$num[$i];
+                $num[$i]=$temp;
+
+                $k=0;
+                if($k < $i) echo "[";
+                for($k; $k<$i; $k++){
+                    echo $num[$k];
+                    if($k != $i-1)
+                        echo ", ";
+                    else
+                        echo "]<br>";
+                }
             }
+            echo "After : ";
+            arrPrint($num);
         }
         
-        function insertSort(){
-
+        function insertionSort($num){
+            $size = count($num);
+            for($i=1; $i<$size; $i++){
+                $temp = $num[$i];
+                for($j=$i-1; $j>=0; $j--){
+                    if($num[$j]<$temp) break;
+                    $num[$j+1] = $num[$j];
+                }
+                $num[$j+1] = $temp;
+                
+                $k=0;
+                if($k < $i) echo "[";
+                for(; $k<$i; $k++){
+                    echo $num[$k];
+                    if($k != $i-1)
+                        echo ", ";
+                    else
+                        echo "]<br>";
+                }
+            }
+            echo "After : ";
+            arrPrint($num);
         }
 
         function bubleSort($num){
@@ -42,6 +76,8 @@
                 }
                 arrPrint($num);
             }
+            echo "After : ";
+            arrPrint($num);
         }
         
 
@@ -50,8 +86,20 @@
         echo "Before : ";
         arrPrint($arr);
         bubleSort($arr);
-        echo "After : ";
+
+        echo "<br>";
+
+        echo "2) 선택 정렬<br>";
+        echo "Before : ";
         arrPrint($arr);
+        selectionSort($arr);
+
+        echo "<br>";
+
+        echo "3) 삽입 정렬<br>";
+        echo "Before : ";
+        arrPrint($arr);
+        insertionSort($arr);
     ?>
 </body>
 </html>
