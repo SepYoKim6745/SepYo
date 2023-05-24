@@ -30,7 +30,6 @@
     <form name="form1" method="post" action="numberGame_01.php">
         <input type="text" name="num">
         <input type="submit" name="sub" value="확인"><br>
-        <!-- <?php echo "시도 횟수 : ".$_SESSION['try']."<br>" ?> -->
         <?php echo "시도 횟수 : ".$_SESSION['try']."<br>" ?>
         <?php
             if($er == 1) echo "숫자가 아닙니다. 숫자를 입력해주세요.";
