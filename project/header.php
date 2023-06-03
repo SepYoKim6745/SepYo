@@ -18,8 +18,8 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2" onClick="location.href='login_form.php'">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <button type="button" class="btn btn-outline-light me-2">Login</button>
+          <button type="button" class="btn btn-warning" onClick="location.href='login_form.php'">Sign-up</button>
         </div>
       </div>
     </div>
