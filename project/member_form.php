@@ -1,9 +1,32 @@
-<?php
+<!-- 모달 -->
+<div class="modal fade" id="idCheckModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">아이디 중복 체크</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="cancel_modal"aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe id="idCheckFrame" src="" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-  session_start();
-  $_SESSION['duplication'] = "false";
-
-?>
+<!-- 스크립트 -->
+<script>
+  function openIdCheckModal() {
+    const id = document.getElementById('id_form').value;
+    const url = `member_check_id.php?id=${id}`;
+    document.getElementById('idCheckFrame').src = url;
+  }
+</script>
 
 <script>
 
@@ -66,13 +89,34 @@
   }
 
   function check_id(){
-    window.open("member_check_id.php?id=" + document.member_form.id_form.value, "IDcheck", "left=700, top=300, width=350, height=200, scrollbars=no, resizeable=yes");
+    // window.open("member_check_id.php?id=" + document.member_form.id_form.value, "IDcheck", "left=700, top=300, width=350, height=200, scrollbars=no, resizeable=yes");
+    openIdCheckModal();
+    const id = document.getElementById('id_form').value;
+    const url = `member_check_id.php?id=${id}`;
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        $('#idCheckModal').modal('show');
+      })
+      .catch(error => console.log(error));
+
+    $(document).ready(function() {
+    // btn btn-secondary 클래스를 가진 버튼 클릭 시 모달 닫기
+      $('.btn-secondary').click(function() {
+        $('#idCheckModal').modal('hide');
+      });
+
+      $('.cancel_modal').click(function() {
+        $('#idCheckModal').modal('hide');
+      });
+    });
   }
+  
 </script>
+<?php include "section.php";?>
 <div class="container">
       <div class="col-12">
         <br>
-        <h4 class="mb-3">회원 정보 입력</h4>
         <form name="member_form"class="needs-validation" method="post" action="member_insert.php" novalidate="">
             <br>
             <!-- id -->
