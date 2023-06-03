@@ -1,3 +1,10 @@
+<?php
+
+  session_start();
+  $_SESSION['duplication'] = "false";
+
+?>
+
 <script>
 
   function check_input(){
@@ -79,10 +86,11 @@
               </div>
             </div>
             <!-- 중복체크 btn -->
-            <input class="btn btn-primary" type="button" id="button1" onclick="check_id();" value="중복체크" />
+            <input class="btn btn-primary" type="button" id="check_id_btn" onclick="check_id();" value="중복확인" />
 
             <br>
             <br>
+
             <!-- password -->
             <div class="col-sm-8">
               <label for="pass_form" class="form-label">password</label>
