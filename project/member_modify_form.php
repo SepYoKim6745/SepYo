@@ -9,6 +9,7 @@
     <!-- <script type="text/javascript" src="./js/modify.js"><script> -->
   </head>
   <body>
+    <?php include "header.php";?>
     <?php
         $con = mysqli_connect("localhost", "user1", "12345", "project");
         $sql = "select * from members where id='$userid'";
@@ -24,14 +25,13 @@
 
         mysqli_close($con);
     ?>
-    <?php include "header.php";?>
     <br><br>    
     <div class="container">
     <h1>회원 정보 수정</h1>
     <hr>
       <div class="col-12">
         <br>
-        <form name="member_form"class="needs-validation" method="post" action="member_insert.php" novalidate="">
+        <form name="member_form"class="needs-validation" method="post" action="member_modify.php?id=<?=$userid?>" novalidate="">
             <br>
             <!-- id -->
             <div class="col-8" style="display : inline-block;">
@@ -55,14 +55,14 @@
             <!-- password confirm -->
             <div class="col-sm-8">
               <label for="pass_confirm_form" class="form-label">password 확 인</label>
-              <input type="password" name="pass_confirm" class="form-control" id="pass_confirm_form" placeholder="password를 확인해주세요.">
+              <input type="password" name="pass_confirm" class="form-control" id="pass_confirm_form" placeholder="password를 확인해주세요." value="<?=$pass?>">
             </div>
 
             <br>
             <!-- name -->
             <div class="col-sm-8">
               <label for="name_form" class="form-label">이름</label>
-              <input type="text" name="name" class="form-control" id="name_form" placeholder="이름을 입력하세요." value="" required="">
+              <input type="text" name="name" class="form-control" id="name_form" placeholder="이름을 입력하세요." value="<?=$name?>" required="">
 
               <!-- <div class="invalid-feedback">
                 Valid last name is required.
@@ -74,7 +74,7 @@
             <!-- email -->
             <div class="col-4" style="display : inline-block;">
               <label for="email_form" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control col-sm-4" id="email_form" placeholder="you@example.com" name="email1">
+              <input type="email" class="form-control col-sm-4" id="email_form" placeholder="you@example.com" name="email1" value="<?=$email1?>">
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
@@ -82,7 +82,7 @@
             @
             <div class="col-sm-4" style="display : inline-block;">
               <select class="form-select" aria-label="Default select example" name="email2">
-                <option value="" selected>선택하세요</option>
+                <option value="<?=$email2?>" selected><?=$email2?></option>
                 <option value="naver.com">naver.com</option>
                 <option value="gmail.com">gmail.com</option>
                 <option value="daum.net">daum.net</option>
@@ -129,8 +129,11 @@
               </div>
             </div> -->
           <hr class="my-4">
+        <div>
+          <button class="w-5 btn btn-primary" type="submit" onclick="check_input()">저장하기</button>
+          <input class="w-5 btn btn-primary" type="reset" onclick="reset_form()">
 
-          <button class="w-20 btn btn-primary btn-lg" type="submit">회원가입 하기</button>
+        </div>
         </form>
       </div>
     </div>
