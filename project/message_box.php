@@ -59,12 +59,12 @@
                 <ul id="message">
                     <li>
                         <div class="col-1">번호</div>
-                        <div class="col-4">제목</div>
+                        <div class="col-3">제목</div>
                         <?php
                         if ($mode == "send")
-                            echo "<div class='col-3'>받은이</div>";
+                            echo "<div class='col-2'>받은이</div>";
                         else
-                            echo "<div class='col-3'>보낸이</div>";
+                            echo "<div class='col-2'>보낸이</div>";
                         ?>
                         <div class="col-3">등록일</div>
                         <hr class="container">
@@ -108,11 +108,11 @@
                             <div class="col-1">
                                 <?= $number ?>
                             </div>
-                            <div class="col-4">
+                            <div class="col-3">
                                 <a href="message_view.php?mode=send&num=<?= $num ?>">
                                     <?= $subject ?></a>
                             </div>
-                            <div class="col-3">
+                            <div class="col-2">
                                 <?= $msg_name ?>(
                                 <?= $msg_id ?> )
                             </div>

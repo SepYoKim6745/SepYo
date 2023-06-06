@@ -1,0 +1,15 @@
+li {
+    list-style: none;
+}
+
+#post_writer{
+    float : right;
+}
+
+.buttons > li{
+    display: inline-block;
+}
+
+.buttons {
+    text-align-last : right;
+}
