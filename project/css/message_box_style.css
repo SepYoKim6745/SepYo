@@ -1,0 +1,21 @@
+#message > li > div{
+    display: inline-block;
+    font-weight: bold;
+}
+
+#postline{
+    border: solid 2px black;
+}
+
+.buttons {
+    text-align-last : right;
+}
+
+.buttons > li{
+    
+    display: inline-block;
+}
+
+#page_num{
+    text-align: center;
+}

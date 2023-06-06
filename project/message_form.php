@@ -26,7 +26,7 @@
             document.message_form.subject.focus();
             return;
         }
-        if (!document.message_form.content.vlaue) {
+        if (!document.message_form.content.value) {
             alert("내용을 입력하세요!");
             document.message_form.content.focus();
             return;
@@ -41,14 +41,14 @@
         <form name="message_form" method="post" action="message_insert.php?send_id=<?= $userid ?>">
             <br><br>
             <div class="container">
-                <h1 class="h3 mb-3 fw-normal">쪽지 보내기</h1>
+                <h1 class="h3 mb-3 fw-normal" style="display:inline-block;">쪽지 보내기</h1>
                 <ul class="top_buttons" style="float : right">
                     <li><span><a href="message_box.php?mode=rv">수신 쪽지함</a></span></li>
                     <li><span><a href="message_box.php?mode=send">송신 쪽지함</a></span></li>
                 </ul>
             </div>
-            <hr>
             <br>
+            <hr>
             <ul>
                 <li>
                     <!-- send id input -->
