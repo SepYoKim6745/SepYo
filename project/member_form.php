@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 <!-- 모달 -->
 <div class="modal fade" id="idCheckModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">

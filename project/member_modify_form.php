@@ -8,6 +8,62 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <script type="text/javascript" src="./js/modify.js"><script> -->
   </head>
+  <script>
+
+  function check_input(){
+
+      if(!document.member_form.pass.value){
+        alert("비밀번호를 입력하세요!");
+        document.member_form.pass.focus();
+        return;
+        
+      }
+
+      if(!document.member_form.pass_confirm.value){
+        alert("비밀번호 확인을 입력하세요!");
+        document.member_form.pass_confirm.focus();
+        return;
+      }
+
+      if(!document.member_form.name.value){
+        alert("이름을 입력하세요!");
+        document.member.form.name.focus();
+        return;
+      }
+
+      if(!document.member_form.email1.value){
+        alert("이메일을 입력하세요!");
+        document.member_form.email1.focus();
+        return;
+      }
+
+      if(!document.member_form.email2.value){
+        alert("이메일을 입력하세요!");
+        document.member_form.email2.focus();
+        return;
+      }
+
+      if(document.member_form.pass.value != document.member_form.pass_confirm.value){
+        alert("비밀번호가 일치하지 않습니다.\n다시 입력해주세요!");
+        document.member_form.pass.focus();
+        document.member_form.pass.select();
+        return;
+      }
+
+      document.member_form.submit();
+  }
+
+  function reset_form(){
+    //document.member_form.id.value = "";
+    document.member_form.pass.value = "";
+    document.member_form.pass_confirm.value = "";
+    document.member_form.name.value = "";
+    document.member_form.email1.value = "";
+    document.member_form.email2.value = "";
+    document.member_form.id.focus();
+    return;
+  }
+  </script>
   <body>
     <?php include "header.php";?>
     <?php
@@ -131,7 +187,7 @@
           <hr class="my-4">
         <div>
           <button class="w-5 btn btn-primary" type="submit" onclick="check_input()">저장하기</button>
-          <input class="w-5 btn btn-primary" type="reset" onclick="reset_form()">
+          <input class="w-5 btn btn-primary" type="submit" value="취소하기">
 
         </div>
         </form>

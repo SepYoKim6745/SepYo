@@ -4,9 +4,11 @@
     $name = $_POST["name"];
     $email1 = $_POST["email1"];
     $email2 = $_POST["email2"];
-    $email1 = $email1."@".$email2;
+    $email = $email1 . "@" . $email2;
+    $pass_confirm = $_POST["pass_confirm"];
+
     
-    if(!$id || !$pass || !$name || $email1 == "@" || $email2 == ""){
+    if(!$id || !$pass || !$name || $email1 == "@" || $email2 == "" || $pass_confirm && ($pass != $pass_confirm)){
         echo "
             <script>
                 alert('회원정보를 모두 입력해주세요!');
