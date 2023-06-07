@@ -1,0 +1,7 @@
+.buttons > li {
+    display: inline-block;
+}
+.buttons {
+    text-align-last : right;
+}
+
