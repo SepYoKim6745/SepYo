@@ -1,0 +1,24 @@
+li {
+    list-style: none;
+}
+
+.board_list > li > div{
+    display: inline-block;
+    text-align: center;
+}
+
+.board_list{
+    padding: 0px;
+}
+
+#page_num{
+    text-align: center;
+}
+
+.buttons {
+    text-align-last : right;
+}
+
+.buttons > li{
+    display: inline-block;
+}

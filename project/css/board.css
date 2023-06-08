@@ -1,0 +1,19 @@
+li {
+    list-style: none;
+}
+
+#view_content > li > div{
+    display: inline-block;
+}
+
+.buttons {
+    text-align-last : right;
+}
+
+.buttons > li{
+    display: inline-block;
+}
+
+.col-form-label {
+    padding: 0px;
+}

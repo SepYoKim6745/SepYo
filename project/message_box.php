@@ -69,7 +69,7 @@
                         <div class="col-3">등록일</div>
                         <hr class="container">
                     </li>
-                    <?php   
+                    <?php
                     $con = mysqli_connect("localhost", "user1", "12345", "project");
                     if ($mode == "send")
                         $sql = "select * from message where send_id='$userid' order by num desc";
