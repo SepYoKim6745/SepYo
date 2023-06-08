@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 if (isset($_SESSION["userid"]))
   $userid = $_SESSION["userid"];
 else
@@ -28,11 +30,13 @@ else
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.php" class="nav-link px-2 text-secondary">Home</a></li>
-        <li><a href="board_list.php" class="nav-link px-2 text-white">게시판</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        <li><a href="index.php" class="nav-link px-3 text-secondary">Home</a></li>
+        <li><a href="board_list.php" class="nav-link px-3 text-white">게시판</a></li>
+        <?php if ($userlevel >= 1) { ?>
+          <li><a href="message_form.php" class="nav-link px-3 text-white">쪽지</a></li>
+        <?php } ?>
+
+        <li><a href="#" class="nav-link px-3 text-white">About</a></li>
       </ul>
 
       <?php
@@ -56,12 +60,6 @@ else
 
         &nbsp;|&nbsp;
         <a href="admin.php">관리자 모드</a>
-
-      <?php } ?>
-
-      <?php if ($userlevel >= 1) { ?>
-        &nbsp;|&nbsp;
-        <a href="message_form.php">쪽지</a>
 
       <?php } ?>
     </div>

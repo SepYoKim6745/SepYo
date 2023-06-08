@@ -53,8 +53,7 @@
                     echo "수신 쪽지함 > 목록 보기";
                 ?>
             </h3>
-            <br>
-            <hr id="postline" class="container">
+            <hr id="postline" class="container" style="border : solid 2px black;">
             <div class="row mb-3 text-center">
                 <ul id="message">
                     <li>
@@ -156,11 +155,11 @@
                 ?>
             </ul>
             <ul class="buttons container">
-                <li><button class="btn btn-primary" onclick="location.href='message_box.php?mode=rv'">
+                <li><button class="btn btn-dark" onclick="location.href='message_box.php?mode=rv'">
                         수신 쪽지함</button></li>
-                <li><button class="btn btn-primary" onclick="location.href='message_box.php?mode=send'">
+                <li><button class="btn btn-secondary" onclick="location.href='message_box.php?mode=send'">
                         송신 쪽지함</button></li>
-                <li><button class="btn btn-primary" onclick="location.href='message_form.php'">
+                <li><button class="btn btn-warning" onclick="location.href='message_form.php'">
                         쪽지 보내기</button></li>
             </ul>
         </div>

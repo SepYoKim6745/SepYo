@@ -22,7 +22,7 @@
 			<h3>
 				게시판 > 목록보기
 			</h3>
-			<hr>
+			<hr style="border : solid 2px black;">
 			<ul class="board_list">
 				<li>
 					<div class="col-1">번호</div>
@@ -124,16 +124,16 @@
 				?>
 			</ul> <!-- page -->
 			<ul class="buttons">
-				<li><button class="btn btn-primary" onclick="location.href='board_list.php'">목록</button></li>
+				<li><button class="btn btn-dark" onclick="location.href='board_list.php'">목록</button></li>
 				<li>
 					<?php
 					if ($userid) {
 						?>
-						<button class="btn btn-primary" onclick="location.href='board_form.php'">글쓰기</button>
+						<button class="btn btn-warning" onclick="location.href='board_form.php'">글쓰기</button>
 						<?php
 					} else {
 						?>
-						<a href="javascript:alert('로그인 후 이용해 주세요!')"><button>글쓰기</button></a>
+						<a href="javascript:alert('로그인 후 이용해 주세요!')"><button class="btn btn-warning">글쓰기</button></a>
 						<?php
 					}
 					?>

@@ -12,29 +12,26 @@
 
 <body>
   <?php include "header.php"; ?>
+  <br>
+  <br>
   <div class="container">
     <form name="login_form" method="post" action="login.php">
-      <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <h1 class="h3 mb-3 fw-normal">Please login</h1>
+      <br>
       <!-- 아이디 input -->
 
       <div class="form-floating">
         <input type="text" name="id" class="form-control" id="floatingInput" placeholder="id를 입력하세요.">
         <label for="floatingInput">id를 입력하세요.</label>
       </div>
-
+      <br>
       <!-- 비밀번호 input -->
       <div class="form-floating">
         <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password를 입력하세요">
         <label for="floatingPassword">Password를 입력하세요.</label>
       </div>
-
-      <!-- <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div> -->
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <br>
+      <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
     </form>
   </div>

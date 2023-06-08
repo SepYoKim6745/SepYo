@@ -32,7 +32,7 @@
             <h3 id="board_title">
                 게시판 > 글 쓰기
             </h3>
-            <hr>
+            <hr style="border : solid 2px black;">
             <?php
             $num = $_GET["num"];
             $page = $_GET["page"];
@@ -85,8 +85,8 @@
                     </li>
                 </ul>
                 <ul class="buttons">
-                    <li><button class="btn btn-primary" type="button" onclick="check_input()">완료</button></li>
-                    <li><button class="btn btn-primary" type="button"
+                    <li><button class="btn btn-warning" type="button" onclick="check_input()">완료</button></li>
+                    <li><button class="btn btn-dark" type="button"
                             onclick="location.href='board_list.php'">목록</button></li>
                 </ul>
             </form>

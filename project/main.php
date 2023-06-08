@@ -1,27 +1,46 @@
-<div class="album py-5 bg-light">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<?php
+$con = mysqli_connect("localhost", "user1", "12345", "project");
+$sql = "select * from board order by num desc limit 5";
+$result = mysqli_query($con, $sql);
 
-      <div class="col">
-        <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="자리표시자: 썸네일" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">صورة
-              مصغرة</text>
-          </svg>
+if (!$result)
+  echo "게시판 DB 테이블(board)이 생성 전이거나 아직 게시글이 없습니다!";
+else {
+  echo "<div class='container'>";
+  while ($row = mysqli_fetch_array($result)) {
+    $regist_day = substr($row["regist_day"], 0, 10);
+    ?>
+      <div class="album bg-light col-3.8" style="display:inline-flex;">
+        <div class="col-12" >
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="자리표시자: 썸네일" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                  <?= $row["subject"] ?>
+                </text>
+              </svg>
 
-          <div class="card-body">
-            <p class="card-text">추가 콘텐츠에 대한 자연스러운 소개로 아래에 지원 텍스트가 있는 더 넓은 카드입니다.이 내용은 조금 더 깁니다.</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">제안</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">개정</button>
-              </div>
-              <small class="text-muted">9분</small>
+              <div class="card-body">
+                <p class="card-text">
+                <h4>
+                  <?= $row["subject"] ?>
+                </h4>
+                <?= $row["name"] ?>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><?= $row["hit"]?>&nbsp; &nbsp; <i class="bi bi-eye"></i></button>
+                  <small class="text-muted">
+                    <?= $regist_day ?>
+                  </small>
+                </div>
+              </div>  
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+      <?php
+  }
+}
+?>

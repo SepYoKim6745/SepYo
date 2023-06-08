@@ -87,12 +87,11 @@
   <br><br>
   <div class="container">
     <h1>회원 정보 수정</h1>
-    <hr>
+    <hr style="border: 3px solid black;">
     <div class="col-12">
       <br>
       <form name="member_form" class="needs-validation" method="post" action="member_modify.php?id=<?= $userid ?>"
         novalidate="">
-        <br>
         <!-- id -->
         <div class="col-8" style="display : inline-block;">
           <label for="id_form" class="form-label">ID :
@@ -125,12 +124,8 @@
         <!-- name -->
         <div class="col-sm-8">
           <label for="name_form" class="form-label">이름</label>
-          <input type="text" name="name" class="form-control" id="name_form" placeholder="이름을 입력하세요." value="<?= $name ?>"
-            required="">
-
-          <!-- <div class="invalid-feedback">
-                Valid last name is required.
-              </div> -->
+          <input type="text" name="name" class="form-control" id="name_form" placeholder="이름을 입력하세요."
+            value="<?= $name ?>" required="">
         </div>
 
         <br>
@@ -153,50 +148,13 @@
             <option value="daum.net">daum.net</option>
             <option value="koreatech.ac.kr">koreatech.ac.kr</option>
           </select>
-
-          <!-- <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div> -->
         </div>
 
         <br>
-
-        <!-- <div class="col-12">
-              <label for="address_form" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address_form" placeholder="1234 Main St" required="">
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-            <br>
-            <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country" required="">
-                <option>대한민국</option>
-                <option>미국</option>
-                <option>중국</option>
-                <option>일본</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-
-            <br>
-            
-            <div class="col-md-4">
-              <label for="belong" class="form-label">State</label>
-              <select class="form-select" id="belong" required="">
-                <option>한국기술교육대학교</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div> -->
         <hr class="my-4">
         <div>
-          <button class="w-5 btn btn-primary" type="submit" onclick="check_input()">저장하기</button>
-          <input class="w-5 btn btn-primary" type="submit" value="취소하기">
+          <button class="w-5 btn btn-warning" type="submit" onclick="check_input()">저장하기</button>
+          <input class="w-5 btn btn-dark" type="submit" value="취소하기">
 
         </div>
       </form>

@@ -19,7 +19,7 @@
             <h3 class="title">
                 게시판 > 내용보기
             </h3>
-            <hr>
+            <hr style="border : solid 2px black;">
             <?php
             $num = $_GET["num"];
             $page = $_GET["page"];
@@ -52,9 +52,10 @@
                         <div class="col-11" style="display : inline-block;">
                             <?= $subject ?>
                         </div>
-                    </div>  
+                    </div>
                     <div class="col-3" style="float:right; text-align: right;">
-                        <?= $name ?> | <?= $regist_day ?>
+                        <?= $name ?> |
+                        <?= $regist_day ?>
                     </div>
                 </li>
                 <hr>
@@ -72,14 +73,17 @@
                     <?= $content ?>
                 </li>
             </ul>
-            <hr>    
+            <hr>
             <ul class="buttons">
-                <li><button class="btn btn-primary" onclick="location.href='board_list.php?page=<?= $page ?>'">목록</button></li>
-                <li><button class="btn btn-primary" onclick="location.href='board_modify_form.php?num=<?= $num ?>&page=<?= $page ?>'">수정</button>
+                <li><button class="btn btn-dark"
+                        onclick="location.href='board_list.php?page=<?= $page ?>'">목록</button></li>
+                <li><button class="btn btn-success"
+                        onclick="location.href='board_modify_form.php?num=<?= $num ?>&page=<?= $page ?>'">수정</button>
                 </li>
-                <li><button class="btn btn-primary" onclick="location.href='board_delete.php?num=<?= $num ?>&page=<?= $page ?>'">삭제</button>
+                <li><button class="btn btn-danger"
+                        onclick="location.href='board_delete.php?num=<?= $num ?>&page=<?= $page ?>'">삭제</button>
                 </li>
-                <li><button class="btn btn-primary" onclick="location.href='board_form.php'">글쓰기</button></li>
+                <li><button class="btn btn-warning" onclick="location.href='board_form.php'">글쓰기</button></li>
             </ul>
         </div> <!-- board_box -->
     </section>

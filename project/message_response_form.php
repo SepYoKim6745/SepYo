@@ -32,7 +32,7 @@
 			<h3 id="title">
 				답변 쪽지 보내기
 			</h3>
-			<hr>
+			<hr style="border : solid 2px black;">
 			<?php
 			$num = $_GET["num"];
 
@@ -77,9 +77,9 @@
 						<hr>
 						<li>
 							<div class="row">
-								<label for="content" class="col-1 col-form-label">내용 </label>
+								<label for="subject" class="col-1 col-form-label">제목 </label>
 								<div class="col-11">
-									<textarea name="content" type="textarea" class="form-control" rows="10"></textarea>
+									<input name="subject"class="form-control"value="<?=$subject?>">
 								</div>
 							</div>
 						</li>
@@ -94,7 +94,7 @@
 							</div>
 						</li>
 					</ul>
-					<button type="button" class="btn btn-primary" style="float:right;"
+					<button type="button" class="btn btn-warning" style="float:right;"
 						onclick="check_input()">보내기</button>
 				</div>
 			</form>

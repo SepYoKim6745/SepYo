@@ -33,9 +33,9 @@
         <br>
         <div id="board_box" class="container">
             <h3 id="board_title">
-                게시판 > 글 쓰기
+                게시판 > 글쓰기
             </h3>
-            <hr>
+            <hr style="border : solid 2px black;">
             <form name="board_form" method="post" action="board_insert.php" enctype="multipart/form-data">
                 <ul id="board_form">
                     <li>
@@ -74,8 +74,8 @@
                     </li>
                 </ul>
                 <ul class="buttons">
-                    <li><button class="btn btn-primary" type="button" onclick="check_input()">완료</button></li>
-                    <li><button class="btn btn-primary" type="button" onclick="location.href='board_list.php'">목록</button></li>
+                    <li><button class="btn btn-warning" type="button" onclick="check_input()">완료</button></li>
+                    <li><button class="btn btn-dark" type="button" onclick="location.href='board_list.php'">목록</button></li>
                 </ul>
             </form>
         </div> <!-- board_box -->

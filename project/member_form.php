@@ -1,4 +1,3 @@
-<?php include "header.php"; ?>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <!-- 모달 -->
 <div class="modal fade" id="idCheckModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -115,12 +114,11 @@
   }
 
 </script>
-<?php include "section.php"; ?>
+<?php include "header.php"; ?>
+<?php include "section_login.php"; ?>
 <div class="container">
   <div class="col-12">
-    <br>
     <form name="member_form" class="needs-validation" method="post" action="member_insert.php" novalidate="">
-      <br>
       <!-- id -->
       <div class="col-8" style="display : inline-block;">
         <label for="id_form" class="form-label">Username</label>

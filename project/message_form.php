@@ -39,7 +39,7 @@
     <?php include "header.php"; ?>
     <div class="container">
         <form name="message_form" method="post" action="message_insert.php?send_id=<?= $userid ?>">
-            <br><br>
+            <br>
             <div class="container">
                 <h1 class="h3 mb-3 fw-normal" style="display:inline-block;">쪽지 보내기</h1>
                 <ul class="top_buttons" style="float : right">
@@ -47,8 +47,7 @@
                     <li><span><a href="message_box.php?mode=send">송신 쪽지함</a></span></li>
                 </ul>
             </div>
-            <br>
-            <hr>
+            <hr style="border : solid 2px black;">
             <ul>
                 <li>
                     <!-- send id input -->
@@ -98,7 +97,7 @@
                 </li>
             </ul>
             <div class="container" style="text-align : right">
-                <button class="w-5 btn btn-primary" type="button" onclick="check_input()">보내기</button>
+                <button class="w-5 btn btn-warning" type="button" onclick="check_input()">보내기</button>
             </div>
         </form>
     </div>
